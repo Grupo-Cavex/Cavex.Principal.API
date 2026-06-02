@@ -1,0 +1,6 @@
+@Cavex.Principal.API_HostAddress = http://localhost:5243
+
+GET {{Cavex.Principal.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
