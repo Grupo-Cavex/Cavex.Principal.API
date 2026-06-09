@@ -1,4 +1,4 @@
-﻿namespace Cavex.Principal.API.Dtos
+﻿namespace Cavex.Principal.API.Dtos.EmpCatAreaLaboral
 {
     public class EmpCatAreaLaboralDto
     {
