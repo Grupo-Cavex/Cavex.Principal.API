@@ -82,9 +82,13 @@ namespace Cavex.Principal.Infraestructure.Data
 
 
 
-        public Task<int> CountAsync(ISpecification<T> specification)
+        public async Task<int> CountAsync(ISpecification<T> specification)
         {
-            throw new NotImplementedException();
+            var query = cavexContext.Set<T>().AsQueryable();
+
+            query = specification.ApplyCriteria(query);
+
+            return await query.CountAsync();
         }
 
 

@@ -36,6 +36,6 @@ namespace Cavex.Principal.Core.Contract
 
         bool Exists(int id);
 
-        //Task<int> CountAsync(ISpecification<T> specification);
+        Task<int> CountAsync(ISpecification<T> specification);
     }
 }
