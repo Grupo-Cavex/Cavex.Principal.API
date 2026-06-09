@@ -22,11 +22,13 @@
     <Compile Remove="Cavex.Principal.Core\**\*.cs" />
     <Compile Remove="Cavex.Principal.Infraestructure\**\*.cs" />
   </ItemGroup>
+  
 
   <ItemGroup>
     <ProjectReference Include="Cavex.Principal.Common\Cavex.Principal.Common.csproj" />
     <ProjectReference Include="Cavex.Principal.Core\Cavex.Principal.Core.csproj" />
     <ProjectReference Include="Cavex.Principal.Infraestructure\Cavex.Principal.Infraestructure.csproj" />
+    <!--<Content Include="nlog.config" CopyToOutputDirectory="PreserveNewest" />-->
   </ItemGroup>
 
 </Project>

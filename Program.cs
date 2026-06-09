@@ -1,10 +1,19 @@
+using Cavex.Principal.API.Extensions;
 using Cavex.Principal.Core.Contract;
 using Cavex.Principal.Infraestructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi;
-using System.Threading.RateLimiting;
+using NLog;
+using NLog.Web;
 using System.Reflection;
-;
+using System.Threading.RateLimiting;
+
+var logger = LogManager
+    .Setup()
+    .LoadConfigurationFromFile("nlog.config")
+    .GetCurrentClassLogger();
+
+try { 
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,6 +53,8 @@ builder.Services.AddRateLimiter(options =>
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
+
+app.UseGlobalExceptionMiddleware();
 
 builder.Services.AddDbContext<CavexContext>(options =>
 {
@@ -98,3 +109,14 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+}
+catch (Exception exception)
+{
+    logger.Error(exception, "La aplicacion se detuvo por una excepcion no controlada.");
+    throw;
+}
+finally
+{
+    NLog.LogManager.Shutdown();
+}
