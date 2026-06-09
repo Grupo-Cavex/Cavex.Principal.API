@@ -2,10 +2,26 @@
 {
     public class EmpCatAreaLaboralDto
     {
-        public int Id { get; set; }
+        /// <summary>
+        /// Representa un area laboral registrada en el catalogo.
+        /// </summary>
+        
+            /// <summary>
+            /// Identificador unico del area laboral.
+            /// </summary>
+            /// <example>1</example>
+            public int Id { get; set; }
 
-        public string StrValor { get; set; } = string.Empty;
+            /// <summary>
+            /// Nombre o valor principal del area laboral.
+            /// </summary>
+            /// <example>Recursos Humanos</example>
+            public string StrValor { get; set; } = string.Empty;
 
-        public string? StrDescripcion { get; set; }
+            /// <summary>
+            /// Descripcion opcional del area laboral.
+            /// </summary>
+            /// <example>Area responsable de administracion de personal.</example>
+            public string? StrDescripcion { get; set; }
     }
 }

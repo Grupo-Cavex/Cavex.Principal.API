@@ -3,6 +3,8 @@ using Cavex.Principal.Infraestructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi;
 using System.Threading.RateLimiting;
+using System.Reflection;
+;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -58,10 +60,22 @@ builder.Services.AddSwaggerGen(options =>
     {
         Title = "Cavex Principal API",
         Version = "v1",
-        Description = "API principal para catalogos y procesos de Cavex."
+        Description = "API principal para catalogos y procesos de Cavex.",
+        Contact = new OpenApiContact
+        {
+            Name = "Grupo Cavex",
+            Email = "soporte@cavex.com"
+        }
     });
-});
 
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+
+    if (File.Exists(xmlPath))
+    {
+        options.IncludeXmlComments(xmlPath);
+    }
+});
 
 
 

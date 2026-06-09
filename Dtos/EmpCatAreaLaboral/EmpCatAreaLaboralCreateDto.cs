@@ -2,12 +2,23 @@
 
 namespace Cavex.Principal.API.Dtos.EmpCatAreaLaboral
 {
+    /// <summary>
+    /// Datos requeridos para crear un area laboral.
+    /// </summary>
     public class EmpCatAreaLaboralCreateDto
     {
+        /// <summary>
+        /// Nombre o valor principal del area laboral.
+        /// </summary>
+        /// <example>Contabilidad</example>
         [Required]
         [MaxLength(150)]
         public string StrValor { get; set; } = string.Empty;
 
+        /// <summary>
+        /// Descripcion opcional del area laboral.
+        /// </summary>
+        /// <example>Area responsable de registros contables y financieros.</example>
         [MaxLength(300)]
         public string? StrDescripcion { get; set; }
     }

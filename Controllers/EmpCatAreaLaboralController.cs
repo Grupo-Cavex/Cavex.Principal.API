@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Extensions.Caching.Memory;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 
 namespace Cavex.Principal.API.Controllers
@@ -86,10 +87,20 @@ namespace Cavex.Principal.API.Controllers
 
 
 
+        /// <summary>
+        /// Obtiene un area laboral por su identificador.
+        /// </summary>
+        /// <param name="id">Identificador unico del area laboral.</param>
+        /// <returns>Area laboral encontrada.</returns>
         [HttpGet("{id:int}")]
         [EnableRateLimiting("CatalogReadPolicy")]
+        [SwaggerOperation(
+            Summary = "Consultar area laboral por Id",
+            Description = "Obtiene un registro especifico del catalogo de areas laborales mediante su identificador."
+        )]
         [ProducesResponseType(typeof(ResponseWrapper<EmpCatAreaLaboralDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseWrapper<EmpCatAreaLaboralDto>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ResponseWrapper<object>), StatusCodes.Status429TooManyRequests)]
         public async Task<ActionResult<ResponseWrapper<EmpCatAreaLaboralDto>>> GetById(int id)
         {
             var cacheKey = $"{CachePrefix}:Id:{id}";
