@@ -10,6 +10,7 @@ namespace Cavex.Principal.Infraestructure.Config
         {
             builder.ToTable("EmpCatAreaLaboral");
 
+            
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.StrValor)
@@ -18,6 +19,8 @@ namespace Cavex.Principal.Infraestructure.Config
 
             builder.Property(x => x.StrDescripcion)
                 .HasMaxLength(300);
+
+           
         }
     }
 }

@@ -13,8 +13,8 @@ namespace Cavex.Principal.Core.Entities
         public decimal MnySueldoMensual { get; set; }               
         public bool BitExperienciaEnArea { get; set; }              
         public bool BitDisponibilidadCambioResidencia { get; set; } 
-        public DateOnly DteFechaIngreso { get; set; }               
+        public DateOnly DteFechaIngreso { get; set; }
 
-        public EmpEmpleado? EmpEmpleado { get; set; }
+        public List<EmpEmpleado>? EmpEmpleados { get; set; }
     }
 }

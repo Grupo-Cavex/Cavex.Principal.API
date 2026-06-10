@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Cavex.Principal.Core.Entities
 {
@@ -11,7 +7,9 @@ namespace Cavex.Principal.Core.Entities
         public required string StrValor { get; set; }
         public string? StrDescripcion { get; set; }
 
-        public List<EmpHistorialArea>? EmpHistorialAreas { get; set; }
+       // public List<EmpHistorialArea>? EmpHistorialAreas { get; set; }
+
+       
     }
 }
 

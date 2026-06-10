@@ -12,8 +12,9 @@ namespace Cavex.Principal.Core.Entities
         public required string StrUrlComprobanteDomicilio { get; set; }     
         public required string StrUrlCurriculumVitae { get; set; }          
         public required string StrUrlContrato { get; set; }                 
-        public required string StrUrlLicencia { get; set; }                 
+        public required string StrUrlLicencia { get; set; }
 
-        public EmpEmpleado? EmpEmpleado { get; set; }
+
+        public List<EmpEmpleado>? EmpEmpleados { get; set; }
     }
 }

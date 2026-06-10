@@ -13,7 +13,7 @@ namespace Cavex.Principal.Core.Entities
         public int? IntNumInterior { get; set; }    
 
         public EmpCatColonia? EmpCatColonia { get; set; }
-        public EmpEmpleado? EmpEmpleado { get; set; }
+        public List<EmpEmpleado>? EmpEmpleados { get; set; }
     
 }
 }

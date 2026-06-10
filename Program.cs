@@ -2,11 +2,13 @@ using Cavex.Principal.API.Extensions;
 using Cavex.Principal.Core.Contract;
 using Cavex.Principal.Infraestructure.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi;
 using NLog;
 using NLog.Web;
 using System.Reflection;
 using System.Threading.RateLimiting;
+
 
 var logger = LogManager
     .Setup()
@@ -58,7 +60,8 @@ try {
     });
 
     builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-    builder.Services.AddAutoMapper(typeof(Program));
+    //builder.Services.AddAutoMapper(typeof(Program));
+    builder.Services.AddAutoMapper( cf => { }, AppDomain.CurrentDomain.GetAssemblies());
     builder.Services.AddSwaggerGen(options =>
     {
         options.EnableAnnotations();

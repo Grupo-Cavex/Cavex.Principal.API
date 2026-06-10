@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Cavex.Principal.Core.Entities
+﻿namespace Cavex.Principal.Core.Entities
 {
     public class EmpDatosAcademicos:BaseEntity
     {
@@ -16,5 +10,7 @@ namespace Cavex.Principal.Core.Entities
         public DateOnly DteFechaFin { get; set; }               
 
         public EmpEmpleado? EmpEmpleado { get; set; }
+
+        public List<EmpEmpleado>? EmpEmpleados { get; set; }
     }
 }

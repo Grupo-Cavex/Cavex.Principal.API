@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,8 +22,17 @@ namespace Cavex.Principal.Core.Entities
         public int IdEmpCatEstadoCivil { get; set; }
         public int IdEmpCatNacionalidad { get; set; }
         public int IdEmpCatTipoContratacion { get; set; }
+        
+        [ForeignKey("idEmpDireccion")]
         public int IdEmpDireccion { get; set; }
+
+        [ForeignKey("idEmpCondicionesLaborales")]
+        public int IdEmpCondicionesLaborales { get; set; }
+        
+        [ForeignKey("idEmpDatosAcademicos")]
         public int IdEmpDatosAcademicos { get; set; }
+
+        [ForeignKey("IdEmpDocumentosLaborales")]
         public int IdEmpDocumentosLaborales { get; set; }
 
 
