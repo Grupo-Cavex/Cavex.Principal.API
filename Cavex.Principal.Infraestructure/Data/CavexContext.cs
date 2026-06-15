@@ -11,6 +11,9 @@ namespace Cavex.Principal.Infraestructure.Data
         public DbSet<CatServicios> CatServicios { get; set; }
         public DbSet<CatStatus> CatStatus { get; set; }
         public DbSet<CatSucursales> CatSucursales { get; set; }
+        public DbSet<EmpHistorialArea> EmpHistorialAreas { get; set; }
+        public DbSet<EmpExperiencia> EmpExperiencias { get; set; }
+        public DbSet<EmpCondicionesLaborales> EmpCondicionesLaborales { get; set; }
         public CavexContext(DbContextOptions options):base(options)
         {
 
