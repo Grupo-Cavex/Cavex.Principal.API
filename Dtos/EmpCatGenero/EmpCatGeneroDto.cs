@@ -1,0 +1,11 @@
+﻿namespace Cavex.Principal.API.Dtos.EmpCatGenero
+{
+    public class EmpCatGeneroDto
+    {
+        public int Id { get; set; }
+
+        public string StrValor { get; set; } = string.Empty;
+
+        public string? StrDescripcion { get; set; }
+    }
+}
