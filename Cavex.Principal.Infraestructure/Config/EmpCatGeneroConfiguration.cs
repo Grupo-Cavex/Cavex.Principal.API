@@ -4,11 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Cavex.Principal.Infraestructure.Config
 {
-    public class EmpCatPaisConfiguration : IEntityTypeConfiguration<EmpCatPais>
+    public class EmpCatGeneroConfiguration : IEntityTypeConfiguration<EmpCatGenero>
     {
-        public void Configure(EntityTypeBuilder<EmpCatPais> builder)
+        public void Configure(EntityTypeBuilder<EmpCatGenero> builder)
         {
-            builder.ToTable("EmpCatPais");
+            builder.ToTable("EmpCatGenero");
+
+            builder.HasKey(x => x.Id);
 
             builder.Property(x => x.StrValor)
                 .IsRequired()

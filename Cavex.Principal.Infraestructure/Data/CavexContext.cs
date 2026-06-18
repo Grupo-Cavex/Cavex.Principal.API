@@ -1,4 +1,4 @@
-﻿using Cavex.Principal.Core.Entities;
+using Cavex.Principal.Core.Entities;
 using Cavex.Principal.Infraestructure.Config;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +11,7 @@ namespace Cavex.Principal.Infraestructure.Data
         public DbSet<CatServicios> CatServicios { get; set; }
         public DbSet<CatStatus> CatStatus { get; set; }
         public DbSet<CatSucursales> CatSucursales { get; set; }
+
         public DbSet<EmpHistorialArea> EmpHistorialAreas { get; set; }
         public DbSet<EmpExperiencia> EmpExperiencias { get; set; }
         public DbSet<EmpCondicionesLaborales> EmpCondicionesLaborales { get; set; }
@@ -28,7 +29,14 @@ namespace Cavex.Principal.Infraestructure.Data
         public DbSet<EmpCatEstadoCivil> EmpCatEstadosCiviles { get; set; }
         public DbSet<EmpCatEntidadFederativa> EmpCatEntidadesFederativas { get; set; }
 
+
+        public DbSet<EmpCatGenero> EmpCatGeneros { get; set; }
+        public DbSet<EmpCatNacionalidad> EmpCatNacionalidades { get; set; }
+        public DbSet<EmpCatMunicipio> EmpCatMunicipios { get; set; }
+        public DbSet<EmpCatEntidadFederativa> EmpCatEntidadesFederativas { get; set; }
+
         public CavexContext(DbContextOptions options):base(options)
+
         {
 
         }
